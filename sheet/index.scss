@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+
+  .upload {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border: 1px dashed #afafaf;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 2;
+    }
+
+    .clear {
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 3;
+      display: none;
+    }
+    .clear::after {
+      content: "";
+      background-image: url(../imgs/clear.png);
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 32px;
+      height: 32px;
+    }
+  }
+  .upload::after {
+    content: "";
+    background-image: url(../imgs/add.png);
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -16px;
+    margin-top: -16px;
+  }
+}
+
+// 没有图片显示边框问题
+img[src=""],
+img:not([src]) {
+  opacity: 0;
+}
