@@ -13,7 +13,7 @@ $(function () {
 
 function handleChange(files) {
   const file = files[0];
-  const fileSize = file.size;
+  const fileSize = file?.size;
   console.log("before zip size", fileSize);
   const limitSize = 2 * 1024 * 1024; //2M
   fileSize > limitSize ? zipImg(file) : getBase64(file);
